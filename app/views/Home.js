@@ -6,9 +6,9 @@ class Home extends Component {
   render(){
     return(
       <View>
+        <Header message={'Press to login'} />
         <Text>This is a homepage.</Text>
         <Text>Is this working?</Text>
-        <Header message={'Press to login'} />
       </View>
     );
   }
