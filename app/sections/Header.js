@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Text,StyleSheet, View} from "react-native";
+import {Text,StyleSheet, View, Image, Platform} from "react-native";
 
 class Header extends Component {
   constructor(props){
@@ -14,9 +14,13 @@ class Header extends Component {
     });
   }
   render(){
-    let display = this.state.isLoggedIn ? "Sample User" : this.props.message;
+    let display = this.state.isLoggedIn ? (Platform.iOS === "android" ? "Android User" : "iOS User") : this.props.message;
     return(
       <View style={styles.headStyle}>
+        <Image
+          style={styles.logoStyle}
+          source={require('./img/wow.gif')}
+        />
         <Text
           onPress={this.toggleUser}
           style={styles.headText}>
@@ -31,13 +35,20 @@ const styles = StyleSheet.create({
   headText: {
     textAlign: 'right',
     color: "#ffffff",
-    fontSize: 20
+    fontSize: 20,
+    flex:1
   },
   headStyle: {
     paddingTop: 30,
-    paddingBottom: 10,
     paddingRight: 10,
-    backgroundColor: "#35605a"
+    backgroundColor: "#35605a",
+    flex: 1,
+    flexDirection: "row"
+  },
+  logoStyle: {
+    flex: 1,
+    width: undefined,
+    height: undefined
   }
 });
 
