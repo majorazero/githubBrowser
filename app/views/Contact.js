@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {StyleSheet, Text, View, TextInput, TouchableHighlight, Alert} from "react-native";
 import Header from "../sections/Header.js";
-import {createStackNavigator} from "react-navigation";
+//import {createStackNavigator} from "react-navigation";
 
 class Contact extends Component {
   static navigationOptions = {
